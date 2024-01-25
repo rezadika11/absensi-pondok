@@ -63,7 +63,7 @@
                             <a href="{{ route('admin.santri') }}" class="submenu-link">Santri</a>
                         </li>
                         <li class="submenu-item">
-                            <a href="component-alert.html" class="submenu-link">Kitab</a>
+                            <a href="{{ route('admin.kitab') }}" class="submenu-link">Kitab</a>
                         </li>
                         <li class="submenu-item">
                             <a href="component-alert.html" class="submenu-link">Kelas Pagi</a>

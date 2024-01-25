@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\SantriController;
+use App\Http\Controllers\Admin\KitabController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -36,3 +37,17 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::delete('/santri/hapus/{id}', 'hapusSantri')->name('hapusSantri');
   });
 });
+
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+  Route::controller(KitabController::class)->group(function () {
+    Route::get('/kitab/toko', 'tokoKitab')->name('tokoKitab');
+    Route::get('/kitab', 'kitab')->name('kitab');
+    Route::get('/kitab/tambah', 'tambahKitab')->name('tambahKitab');
+    Route::post('/kitab', 'simpankitab')->name('simpanKitab');
+    Route::get('/kitab/edit/{id}', 'editKitab')->name('editiKitab');
+    Route::post('/kitab/edit/{id}', 'updateKitab')->name('updateKitab');
+    Route::delete('/kitab/hapus/{id}', 'hapusKitab')->name('hapusKitab');
+  });
+});
+
+
